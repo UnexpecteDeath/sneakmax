@@ -1,0 +1,102 @@
+@import "./reset.css";
+@import 'nouislider/distribute/nouislider.css';
+@import "./font/stylesheet.css";
+
+
+:root {
+--dark-blue: #484283;
+--red: #F14F4F;
+--dark-red: #8C2828;
+--dark-gray: #31343C;
+--gray: #444B58;
+--sec-bg: #FFF4EE;
+--beige: #DBBBA9;
+--light-gray: #B2B5BB;
+}
+
+
+* {
+  font-family: Intro Book;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 16px;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  color: white;
+  border: none;
+}
+
+h1 {
+  font-family: Intro Regular;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+h2 {
+  font-family: "Intro Bold";
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 30px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+h3 {
+  font-family: Intro Book;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.price {
+  font-family: Intro Regular;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: var(--gray);
+}
+
+input[type='checkbox'] {
+  appearance: none;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  border: 1px solid var(--beige);
+}
+
+input[type='checkbox']::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.6246 17.1859C10.4844 17.3269 10.2931 17.4056 10.0944 17.4056C9.89563 17.4056 9.70438 17.3269 9.56413 17.1859L5.32963 12.9506C4.89013 12.5111 4.89013 11.7986 5.32963 11.3599L5.85987 10.8296C6.29938 10.3901 7.01112 10.3901 7.45062 10.8296L10.0944 13.4734L17.2381 6.32963C17.6776 5.89012 18.3901 5.89012 18.8289 6.32963L19.3591 6.85988C19.7986 7.29938 19.7986 8.01188 19.3591 8.45063L10.6246 17.1859Z" fill="%23DBBBA9"/></svg>');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity .2s;
+}
+
+input[type='checkbox']:checked::after {
+  opacity: 1;
+}
+
+#choice {
+    border: 1px solid black;
+}

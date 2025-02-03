@@ -1,0 +1,30 @@
+.select__container {
+    display: flex;
+    flex-direction: column;
+    min-height: 356px;
+    gap: 20px;
+}
+
+.select__container h3 {
+    color: var(--gray);
+}
+
+.select__container textarea {
+    background-color: white;
+    color: var(--beige);
+    max-width: 445px;
+    min-height: 230px;
+    padding: 20px;
+    resize: none;
+}
+
+.select__container textarea::placeholder {
+    color: var(--beige);
+}
+
+@media(max-width: 768px) {
+
+    .select__container h3 {
+        font-size: 20px;
+    }
+}

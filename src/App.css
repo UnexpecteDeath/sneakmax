@@ -1,0 +1,70 @@
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 60px;
+    margin: 60px 0;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+::-webkit-scrollbar-track {
+    background: #ffffff;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4d4d4d63;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4D4D4D33;
+}
+
+
+#img1 {
+    grid-area: row1;
+}
+
+#img2 {
+    grid-area: row2;
+}
+
+#img3 {
+    grid-area: row3;
+}
+
+#img4 {
+    grid-area: row4;
+}
+
+#img5 {
+    grid-area: row5;
+}
+
+@media(max-width: 1064px) {
+    #img1 {
+        display: none;
+    }
+    #img2 {
+        display: none;
+    }
+    main {
+        gap: 40px;
+        margin: 40px 0;
+    }
+}
+
+#sneakers__section {
+    padding: 40px;
+}
+
+@media(max-width: 1064px) {
+    #sneakers__section {
+        padding: 20px;
+    }
+}

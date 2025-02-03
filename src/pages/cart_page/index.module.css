@@ -1,0 +1,10 @@
+
+.cart_section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.cart_container {
+    padding: 0;
+}

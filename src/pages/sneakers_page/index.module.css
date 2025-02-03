@@ -1,0 +1,229 @@
+
+
+.sneakers__section {
+    margin-bottom: 60px;
+    display: grid;
+    grid-template-rows: 2.5fr 1fr;
+    gap: 60px;
+    box-shadow: 0px 1px 9px 0px rgba(34, 60, 80, 0.2);
+    border-radius: 4px;
+}
+
+
+
+.main__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-height: 550px;
+}
+
+.image__container {
+    position: relative;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+}
+
+.image__container span {
+    position: absolute;
+    background-color: var(--red);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.image__container img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.main__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.main__info h3, .select__size p, .size__container, .price__container h2, .description__container h3, .description__container p {
+    color: var(--gray);
+}
+
+.rate__star__container {
+    display: flex;
+    gap: 4px;
+}
+
+.rate__star__container img {
+    width: 20px;
+    height: 20px;
+}
+
+.select__size {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.size__container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.size__container button {
+    padding: 10px 26px;
+    border: 1px solid var(--light-gray);
+    border-radius: 4px;
+}
+
+.size__container button:not(:disabled):hover, .size__container button:not(:disabled):focus-visible {
+    border: 1px solid #f14f4f;
+}
+
+.size__container button:disabled {
+    border: 1px solid hsla(220, 6%, 72%, 0.5);
+    color: hsla(0, 0%, 0%, 0.5);
+    position: relative;
+}
+
+.size__container button::before {
+    font-family: Intro Book;
+    font-size: 0.75em;
+    font-weight: 400;
+    line-height: 1em;
+    text-align: center;
+    text-underline-position: from-font;
+    color: white;
+    text-decoration-skip-ink: none;
+    content: 'Размера нет в наличии';
+    position: absolute;
+    opacity: 1;
+    padding: 6px 10px 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: calc(100% + 1px);
+    margin: auto;
+    left: calc(50% - (7.917em / 2));
+    width: 7.917em;
+    aspect-ratio: 95 / 51;
+    background-image: url('data:image/svg+xml,<svg width="95" height="51" viewBox="0 0 95 51" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.421821 2.21209C0 3.05628 0 4.15752 0 6.36V37.64C0 39.8425 0 40.9437 0.421821 41.7879C0.808994 42.5628 1.43723 43.191 2.21209 43.5782C3.05628 44 4.15752 44 6.36 44H41.3767C43.9871 48.0532 46.6456 51 48.1468 51C49.648 51 52.3066 48.0532 54.9169 44H88.64C90.8425 44 91.9437 44 92.7879 43.5782C93.5628 43.191 94.191 42.5628 94.5782 41.7879C95 40.9437 95 39.8425 95 37.64V6.36C95 4.15752 95 3.05628 94.5782 2.21209C94.191 1.43723 93.5628 0.808994 92.7879 0.421821C91.9437 0 90.8425 0 88.64 0H6.36C4.15752 0 3.05628 0 2.21209 0.421821C1.43723 0.808994 0.808994 1.43723 0.421821 2.21209Z" fill="%23444B58"/></svg>');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: cover;
+    background-position: center;
+    z-index: -10;
+    opacity: 0;
+    transition: opacity 0.2s, z-index 0s 0.2s;
+}
+
+.size__container button:hover::before {
+    z-index: 0;
+    opacity: 1;
+    transition: opacity 0.2s;
+}
+
+
+.price__container {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.price__container p {
+    color: var(--light-gray);
+}
+
+.guarantee {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.guarantee p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--light-gray);
+    font-size: 14px;
+}
+
+.guarantee p img {
+    width: 15px;
+}
+
+.description__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: max-content max-content;
+    gap: 24px;
+    align-items: center;
+    height: max-content;
+}
+
+.description__container p {
+    max-width: 430px;
+}
+
+.parameters {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+@media(max-width: 968px) {
+    .sneakers__section {
+        gap: 40px;
+    }
+    .main__info h3, .description__container h3 {
+        font-size: 20px;
+    }
+    .price__container h2 {
+        font-size: 24px;
+    }
+    .price__container p, .description__container p {
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 768px) {
+    .sneakers__section {
+        grid-template-rows: none;
+    }
+    .main__container {
+        grid-template-columns: none;
+        grid-template-rows: repeat(2, 1fr);
+        max-height: max-content;
+    }
+    .main__info {
+        padding-top: 0;
+    }
+    .description__container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, max-content);
+    }
+    .description {
+        order: -1;
+    }
+    .description__title {
+        order: -1;
+    }
+}
+
+@media(max-width: 500px) {
+    .main__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: baseline;
+        gap: 1rem;
+    }
+}
+
+@media(max-width: 460px) {
+    .main__container {
+        grid-template-rows: max-content 1fr;
+    }
+}

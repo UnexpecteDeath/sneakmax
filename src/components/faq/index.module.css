@@ -1,0 +1,33 @@
+
+.faq_section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.title_faq {
+    color: var(--gray);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+
+
+.faq_container {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #242424;
+    max-width: 880px;
+    align-self: center;
+}
+
+
+@media(max-width: 1064px) {
+    .title_faq {
+        font-size: 24px;
+    }
+}

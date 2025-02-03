@@ -1,0 +1,174 @@
+
+.section__contacts {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact__container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.title {
+    margin-bottom: 20px;
+}
+
+.title, .help, .contacts h2, .contacts p {
+    color: var(--gray);
+}
+
+.help_container {
+    font-size: 14px;
+    color: var(--light-gray);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: 1px;
+}
+
+
+.help {
+    aspect-ratio: 1 / 1;
+    font-family: Intro Regular;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.25em;
+    background-color: white;
+    border-radius: 100px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
+    cursor: help;
+    filter: drop-shadow(2px 5px 10px rgba(0, 0, 0, 0.2));
+    position: relative;
+}
+
+.help::after {
+    font-family: Intro Book;
+    font-size: 0.875em;
+    font-weight: 400;
+    line-height: 1em;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    content: 'Адрес и телефон для корреспонденции, инвесторов. Вопросы о доставке, качестве обслуживания и товара просьба задавать в отдел продаж.';
+    position: absolute;
+    padding: 15px 25px;
+    background-color: white;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow: auto;
+    max-width: calc(93vw - 140px);
+    width: 426px;
+    border-radius: 4px;
+    bottom: calc(100% + 18px);
+    left: -10px;
+    z-index: -10;
+    opacity: 0;
+    transition: opacity 0.2s, z-index 0s 0.2s;
+    pointer-events: none;
+}
+
+
+.help:hover::before, .help:hover::after {
+    z-index: 10;
+    opacity: 1;
+    transition: opacity 0.2s;
+}
+
+.contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contacts h2 {
+    font-family: Intro Regular;
+    font-weight: 400;
+}
+
+.contacts p {
+    font-size: 18px;
+}
+
+.sale__department {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.button_container {
+    display: flex;
+    gap: 20px;
+}
+
+.button_container button {
+    width: 45px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: #0E5A4C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.frame {
+    width: 680px;
+    height: 500px;
+}
+
+@media(max-width: 1520px) {
+    .frame {
+        width: 550px;
+        height: 400px;
+    }
+    .contact__container {
+        gap: 30px;
+    }
+}
+
+@media(max-width: 1064px) {
+    .container {
+        justify-content: center;
+        gap: 40px;
+        flex-direction: column;
+    }
+    .frame {
+        width: 100%;
+        height: 400px;
+    }
+    .title {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .contacts h2 {
+        font-size: 24px;
+    }
+    .contacts p {
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 868px ) {
+    .help::after {
+        width: 300px;
+    }
+}
+
+@media(max-width: 580px ) {
+    .help::after {
+        width: 220px;
+    }
+}
+
+@media(max-width: 400px ) {
+    .help::after {
+        display: none;
+    }
+}
