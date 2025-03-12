@@ -98,5 +98,5 @@ input[type='checkbox']:checked::after {
 }
 
 #choice {
-    border: 1px solid black;
+  background-color: var(--red);
 }

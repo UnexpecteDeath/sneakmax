@@ -17,6 +17,7 @@ export default function SneakersPage() {
     const params = useParams()
     const dispatch = useAppDispatch()
     const [size, setSize] = useState<null | number>(null)
+    const [isLoad, setIsLoad] = useState(false)
     useEffect(() => {
         if(params.id) {
             dispatch(getSneaker(params.id))
@@ -24,13 +25,17 @@ export default function SneakersPage() {
     }, [params])
 
     const { data, status } = useSelector((state: RootState) => state.sneaker)
+    const [inStock, setInStock] = useState(data?.inStock)
 
-    const handleClick = () => {
-        if(!size) {
-            alert("Выберите размер обуви");
-            return
-        }
-        dispatch(addProduct({...data, size: size ,productId: crypto.randomUUID() }))
+    useEffect(() => {
+        setInStock(data?.inStock)
+    }, [data])
+
+    const addProductToCart = () => {
+        if(!inStock) return;
+        console.log(inStock)
+        dispatch(addProduct({...data, size: size ,productId: crypto.randomUUID()}))
+        setInStock(inStock - 1)
     }
 
     return (
@@ -40,11 +45,15 @@ export default function SneakersPage() {
         {data && <Container className={ styles.sneakers__section } id="sneakers__section">
             <div className={ styles.main__container }>
                 <div className={ styles.image__container }>
-                    {data.inStock === 0 && <span>Товар временно недоступен</span>}
-                    <img src={ `${data.imgUrl}?w=540` } alt={ data.title }></img>
+                    {data.inStock === 0 && <span>Товара нет в наличии</span>}
+                    {!isLoad && <div className={ styles.center }><Loader type="blue"/></div>}
+                    <img src={ `${data.imgUrl}?w=540` } alt={ data.title } onLoad={()=>setIsLoad(true)}></img>
                 </div>
                 <div className={ styles.main__info }>
-                    <h3>{data.title}</h3>
+                    <div className={ styles.header }>
+                        <h3>{data.title}</h3>
+                        <p>В наличии {data.inStock} шт.</p>
+                    </div>
                     <div className={ styles.rate__star__container }>
                         {[1, 2, 3, 4, 5].map((item) =>
                             <img src={data.stars >= item ? star : no_star} alt="rate star" key={`star-key=${item}`}></img>
@@ -62,7 +71,7 @@ export default function SneakersPage() {
                         <h2>{ data.price }</h2>
                         <p>{ data.oldPrice }</p>
                     </div>
-                    <Button text="Заказать" type="red" onClick={handleClick} disabled={data.inStock === 0}/>
+                    <Button text="Заказать" type={`${size ? 'red' : 'gray'}`} onClick={addProductToCart} disabled={data.inStock === 0}/>
                     <div className={ styles.guarantee }>
                         <p><img src={ galochka } alt=""></img>Бесплатная доставка до двери</p>
                         <p><img src={ galochka } alt=""></img>Оплата заказа при получении</p>

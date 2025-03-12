@@ -26,16 +26,6 @@ useEffect(() => {
     dispatch(getSneakers({ page: currentPage, parameters: price + gender + sizes }));
 }, [currentPage, price, gender, sizes]);
 
-useEffect(() => {
-    const handleRezise = () => {
-    setIsOpen(!isMobile)
-    }
-
-    window.addEventListener('resize', handleRezise)
-
-    return () => { window.removeEventListener('resize', handleRezise) }
-}, [isMobile])
-
 
     return (
         <section className={styles.catalog__section} id='catalog'>

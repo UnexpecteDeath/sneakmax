@@ -13,12 +13,15 @@ export default function Header() {
 
     return (
         <header className={ styles.header }>
-            <Container className={ styles.container }>
-                <nav className={ styles.header__nav__container }>
-                        <Link to={"/"} className={ styles.logo } aria-label="На главную страницу">SneakMax</Link>
-                    {!isMobile && <DesktopHeader/>}
-                    {isMobile && <MobileHeader />}
-                </nav>
+            <div  className={ styles.header_container }>
+                <Container>
+                    <nav className={ styles.header__nav__container }>
+                            <Link to={"/"} className={ styles.logo } aria-label="Перейти на главную страницу">SneakMax</Link>
+                        {!isMobile ? <DesktopHeader/> : <MobileHeader />}
+                    </nav>
+                </Container>
+            </div>
+            <Container>
                 <section className={ styles.header__section}>
                             <h1>Кроссовки известных брендов с доставкой по России и СНГ</h1>
                             <p className={ styles.description }>Мы продаем кроссовки брендов Nike, Adidas, Puma, Reebok, Converse и многие другие по низким ценам</p>

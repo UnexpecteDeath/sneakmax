@@ -8,7 +8,7 @@ import PlacingAnOrder from "./pages/placing an order";
 
 export const route = createBrowserRouter([
     {
-        path: "/sneakmax/",
+        path: "/",
         element: <Layout />,
         children: [
             {index: true, element: <HomePage />},

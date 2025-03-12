@@ -2,14 +2,19 @@
     background-color: var(--dark-blue);
     min-height: max-content;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.container {
+
+.header_container {
+    background-color: var(--dark-blue);
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    gap: 100px;
-    margin-bottom: 100px;
+    justify-content: center;
+    position: fixed;
+    z-index: 124235;
+    top: 0; left: 0;
 }
 
 .header__nav__container {
@@ -29,8 +34,10 @@
 
 
 .header__section {
+    margin-top: 164px;
     position: relative;
     z-index: 1;
+    margin-bottom: 100px;
 }
 
 .header__section h1 {

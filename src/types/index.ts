@@ -34,12 +34,11 @@ export type FormData = {
     order_number: string
 }
 
-type Price = {
-    min: number,
-    max: number
-}
 export type Filters = {
-    price: Price,
+    price: {
+        min: number,
+        max: number
+    },
     gender: string[],
     sizes: number[]
 }

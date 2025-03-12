@@ -39,7 +39,7 @@ export default function Cart({ closeCart }: Props) {
                     <p className={ styles.total__price__title }>Итого:</p>
                     <h2 className={ styles.total__price }>{totalPrice} ₽</h2>
                 </div>
-                <Button text="Перейти к оформлению" type="red" onClick={handleClick} disabled={data_cart.length === 0}/>
+                <Button text="Перейти к оформлению" type={!data_cart.length ? "gray" : "red"} onClick={handleClick} disabled={data_cart.length === 0}/>
             </div>
         </div>
     )
