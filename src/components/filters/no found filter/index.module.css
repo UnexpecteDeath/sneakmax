@@ -1,0 +1,45 @@
+.container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.notFound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.notFound h3 {
+    color: var(--dark-gray);
+}
+
+.notFound img {
+    width: 70%;
+}
+
+@keyframes fadeIn {
+    from {
+      scale: .85;
+      opacity: 0;
+    }
+    to {
+        scale: 1;
+      opacity: 1;
+    }
+  }
+
+@media(max-width: 768px) {
+    .notFound h3 {
+        font-size: 16px;
+    }
+}
+
+@media(max-width: 500px) {
+    .notFound h3 {
+        font-size: 14px;
+    }
+}

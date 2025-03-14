@@ -18,12 +18,12 @@ export default function DesktopHeader() {
     return (
         <>
         <div className={ styles.header__nav }>
-            <a href="/#catalog">Каталог</a>
-            <a href="/#about_us">О нас</a>
-            <a href='/#product_selection'>Подбор Товара</a>
-            <a href="/#team">Наша команда</a>
-            <a href="/#faq">Доставка и оплата</a>
-            <a href='/#contacts'>Контакты</a>
+            <a href="#catalog">Каталог</a>
+            <a href="#about_us">О нас</a>
+            <a href='#product_selection'>Подбор Товара</a>
+            <a href="#team">Наша команда</a>
+            <a href="#faq">Доставка и оплата</a>
+            <a href='#contacts'>Контакты</a>
             <a className={ styles.shopping__cart } onClick={()=>setIsOpen(!isOpen)}>Корзина
                 <div className={ styles.cart }>
                     <img src={ shopping_cart } alt='корзина' className={ styles.shopping_cart__image }></img>

@@ -11,6 +11,8 @@ import { incCurrentPages } from '../../redux/sneakersSlice';
 import Loader from '../loader';
 import filter_image from '../../images/filter.svg'
 import { Container } from '../container';
+import NotFoundByFilters from '../filters/no found filter';
+
 
 export default function Catalog() {
 
@@ -53,6 +55,7 @@ useEffect(() => {
                   </div>)}
               </div>
             )}
+            {data.length === 0 && (price !== '' || gender !== '' || sizes !== '') && status !== "pending" && <NotFoundByFilters/>}
             {data.length === 0 && status === "pending" && (
               <div className={styles.center}>
                 <Loader type='blue'/>

@@ -17,12 +17,12 @@ export default function MobileHeader() {
             <BurgerMenu isOpen={ isOpen } setIsOpen={ setIsOpen }/>
             <div className={isOpen ? styles.aside : `${ styles.aside } ${styles.hide}`}>
                 <div className={ styles.header__nav }>
-                    <a onClick={()=>setIsOpen(false)} href="/#catalog">Каталог</a>
-                    <a onClick={()=>setIsOpen(false)} href="/#about_us">О нас</a>
-                    <a onClick={()=>setIsOpen(false)} href="/#product_selection">Подбор Товара</a>
-                    <a onClick={()=>setIsOpen(false)} href="/#team">Наша команда</a>
-                    <a onClick={()=>setIsOpen(false)} href="/#faq">Доставка и оплата</a>
-                    <a onClick={()=>setIsOpen(false)} href='/#contacts'>Контакты</a>
+                    <a onClick={()=>setIsOpen(false)} href="#catalog">Каталог</a>
+                    <a onClick={()=>setIsOpen(false)} href="#about_us">О нас</a>
+                    <a onClick={()=>setIsOpen(false)} href="#product_selection">Подбор Товара</a>
+                    <a onClick={()=>setIsOpen(false)} href="#team">Наша команда</a>
+                    <a onClick={()=>setIsOpen(false)} href="#faq">Доставка и оплата</a>
+                    <a onClick={()=>setIsOpen(false)} href='#contacts'>Контакты</a>
                     <Link to={"cart"} onClick={()=>setIsOpen(false)} className={ styles.shopping__cart }>Корзина
                         <div className={ styles.cart }>
                             <img src={ shopping_cart } alt='корзина'></img>
